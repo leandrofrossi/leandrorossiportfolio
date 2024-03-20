@@ -1,14 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Switch from '../components/Switch.astro';
 ---
 
 <Layout title="Portfolio">
 	<main>
-		<div class="title">		
-			<h1>Leandro Rossi</h1>
-			<h2>Frontend Developer</h2>
-		</div>
+		<section class="principal">
+			<div class="title">		
+				<h1>Leandro Rossi</h1>
+				<h2>Frontend Developer</h2>
+			</div>
+			<div>
+				<img class="w-52 h-52 p-1 rounded-full ring-4 ring-blue-300 dark:ring-blue-500" src="/cv-img.png" alt="profile image">
+			</div>
+		</section>
 			<Card
 				href=""
 				title="Próximamente"
@@ -23,8 +29,8 @@ import Card from '../components/Card.astro';
 				href="https://github.com/leandrofrossi"
 				title="GitHub"
 				body=""
-			/>			
-			
+			/>	
+			<Switch />
 	</main>
 </Layout>
 
@@ -39,18 +45,27 @@ import Card from '../components/Card.astro';
 	}
 	.title{
 		display: flex;
-		flex-direction: column;		
-		background-color: #23262d;	
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-		border-radius: 7px;		
-		align-items: center;
+		flex-direction: column;			
 	}
+	.principal{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		/* background-color: #23262d; */
+		backdrop-filter: blur(1px);	
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+		border-radius: 7px;	
+		align-items: center;
+		padding: 20px;			
+	}	
 	h1 {
 		font-size: 3rem;
 		font-weight: 700;
-		text-align: center;			
+		text-align: center;	
+		margin: 0;
 	}	
 	h2{
 		font-size: 2rem;
-	}
+		margin: 0;
+	}	
 </style>

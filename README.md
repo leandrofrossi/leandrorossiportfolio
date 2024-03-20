@@ -1,6 +1,6 @@
 # Portfolio personal
 
 
-[![LinkedIn]()](https://www.linkedin.com/in/rossileandro/)
+(https://www.linkedin.com/in/rossileandro/)
 
 
