@@ -7,37 +7,73 @@ const { title } = Astro.props;
 
 import { ViewTransitions } from 'astro:transitions';
 ---
-
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Leandro Rossi Frontend Developer - Portfolio" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="theme-color" content="#22333B" />
-		<meta name="robots" content="index, follow" />
-		<meta name="generator" content={Astro.generator} />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Leandro Rossi Frontend Developer - Portfolio" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#22333B" />
+    <meta name="robots" content="index, follow" />
+    <meta name="generator" content={Astro.generator} />
 
-		<meta property="og:title" content="Leandro Rossi Frontend Developer">
-  		<meta property="og:description" content="Leandro Rossi Frontend Developer - Portfolio">
-  		<meta property="og:image" content="/cv-img.jpg">
-  		<meta property="og:image:alt" content="Imagen perfil Leandro Rossi Frontend Developer">
+    <meta property="og:title" content="Leandro Rossi Frontend Developer">
+    <meta property="og:description" content="Leandro Rossi Frontend Developer - Portfolio">
+    <meta property="og:image" content="/cv-img.jpg">
+    <meta property="og:image:alt" content="Imagen perfil Leandro Rossi Frontend Developer">
 
-		<title>{title}</title>
-		<ViewTransitions />
-	</head>
-	<body class="font-mono p-10">	
-		<slot />			
-	</body>
-	
+    <title>{title}</title>
+    <ViewTransitions />
+</head>
+<body class="font-mono p-10">
+    <div class="space space-1"></div>
+    <div class="space space-2"></div>
+    <div class="space space-3"></div>
+	<slot />
+</body>
+
 </html>
-<style is:global>	
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-image: url("/GalaxyWallpaper.png");
-		background-repeat: no-repeat;
-		background-size: cover;			
-	}	
+<style is:global>
+    body {
+        font-family: system-ui, sans-serif;
+        background-image: linear-gradient(#051327, #000);
+		min-height: 100vh;
+    }    
+    .space {
+        width: var(--size);
+        height: var(--size);
+        background: #fff;
+		border-radius: 100%;
+        box-shadow: var(--space-layer);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.75; 
+        animation: moveStars var(--duration) linear infinite;
+    }
+    @keyframes moveStars {
+        from {transform: translateY(0)}
+        to {transform: translateY(-25vh)}
+    }
 </style>
+
+<script> 
+    const COLORS = ["#fff2", "#fff4", "#fff7", "#fffc"];
+    const generateSpaceLayer = (size, selector, totalStars, duration) => {
+        const layer = [];
+        for (let i = 0; i < totalStars; i++) { // Corregido el bucle
+            const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+            const x = Math.floor(Math.random() * 100);
+            const y = Math.floor(Math.random() * 100);
+            layer.push(`${x}vw ${y}vh 0 ${color}, ${x}vw ${y}vh 0 ${color}`);
+        }
+        const container = document.querySelector(selector);
+        container.style.setProperty("--space-layer", layer.join(","));
+        container.style.setProperty("--size", size);
+        container.style.setProperty("--duration", duration);
+    };
+    generateSpaceLayer("1px", ".space-1", 200, "25s");
+    generateSpaceLayer("2px", ".space-2", 100, "20s");
+    generateSpaceLayer("4px", ".space-3", 25, "15s");	
+</script>
