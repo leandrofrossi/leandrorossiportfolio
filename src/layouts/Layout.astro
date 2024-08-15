@@ -6,6 +6,8 @@ interface Props {
 const { title } = Astro.props;
 
 import { ViewTransitions } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 <!doctype html>
 <html lang="en">
@@ -26,11 +28,13 @@ import { ViewTransitions } from 'astro:transitions';
     <title>{title}</title>
     <ViewTransitions />
 </head>
-<body class="font-mono p-10">
+<body class="font-mono p-4 flex flex-col items-center w-full">
     <div class="space space-1"></div>
     <div class="space space-2"></div>
     <div class="space space-3"></div>
+    <Header/>
 	<slot />
+    <Footer/>
 </body>
 </html>
 <style is:global>
@@ -51,7 +55,7 @@ import { ViewTransitions } from 'astro:transitions';
     }
     @keyframes moveStars {
         from {transform: translateY(0)}
-        to {transform: translateY(-25vh)}
+        to {transform: translateY(-15vh)}
     }
 </style>
 
@@ -59,7 +63,7 @@ import { ViewTransitions } from 'astro:transitions';
     const COLORS = ["#fff2", "#fff4", "#fff7", "#fffc"];
     const generateSpaceLayer = (size, selector, totalStars, duration) => {
         const layer = [];
-        for (let i = 0; i < totalStars; i++) { // Corregido el bucle
+        for (let i = 0; i < totalStars; i++) { 
             const color = COLORS[Math.floor(Math.random() * COLORS.length)];
             const x = Math.floor(Math.random() * 100);
             const y = Math.floor(Math.random() * 100);
