@@ -1,4 +1,7 @@
 ---
+import IconComponent from './IconComponent.jsx';
+import { HiHome } from "react-icons/hi2";
+
 const navItems = [
     {
         title: "Inicio",
@@ -14,7 +17,7 @@ const navItems = [
         title: "Skills",
         label: "skills",
         url: "/#skills",
-    },
+    },     
     {
         title: "Sobre mí",
         label: "sobre-mi",
@@ -41,7 +44,10 @@ const navItems = [
           aria-label={link.label}
           href={link.url}
         >
-          {link.title}
+          {link.title === "Inicio" ? 
+          <IconComponent icon={HiHome} className={`text-gray-200 size-4 sm:size-6 hover:text-blue-500 ${link.label === "inicio" ? "active" : ""}`}/>
+          :
+          link.title}
         </a>
       ))
     }    
@@ -53,14 +59,24 @@ const navItems = [
     const sections = document.querySelectorAll("section")
     const navItems = document.querySelectorAll("header nav a")
 
-    const callback = (entries: any[]) => {
+    const callback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
               item.classList.add("text-gray-500")
+              if (item.getAttribute("aria-label") === "inicio") {
+                const icon = item.querySelector('svg');
+                icon.classList.add("text-gray-500");
+              }
+              const newUrl = `${window.location.pathname}#${entry.target.id}`;
+              history.pushState(null, null, newUrl);
             } else {
               item.classList.remove("text-gray-500")
+              if (item.getAttribute("aria-label") === "inicio") {
+                const icon = item.querySelector('svg');
+                icon.classList.remove("text-gray-500");
+              }
             }
           })
         }

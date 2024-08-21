@@ -20,7 +20,10 @@ module.exports = {
 				  primary: '#1f2937',
 				  text: '#f9fafb',
 				},
-			  },
+			},
+			screens: {
+				'xs': '400px',
+			},
 		},
 	},
 	plugins: [],

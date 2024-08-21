@@ -5,15 +5,18 @@ import AboutMe from '../components/AboutMe.astro';
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TbMailShare } from "react-icons/tb";
+import Skills from '../components/Skills.astro';
 ---
 
-<Layout title="Portfolio">
-	
-	<main class="flex flex-col gap-6 text-white w-full md:w-3/4 m-auto p-4">
-		<section id="inicio" class="flex flex-col justify-center items-center p-4 rounded-3xl h-screen">			
+<Layout 
+	title="Leandro Rossi Portfolio" 
+	description="Leandro Rossi Frontend Developer - Portfolio"
+>	
+	<main class="flex flex-col gap-6 text-gray-100 w-full md:w-2/3 m-auto p-4">
+		<section id="inicio" class="flex flex-col justify-center items-center rounded-3xl h-screen">			
 			<div class="flex flex-col text-center">		
-				<h1 class="text-5xl sm:text-7xl font-bold">Leandro Rossi</h1>
-				<h2 class="text-blue-500 text-3xl sm:text-5xl font-semibold">Frontend Developer</h2>
+				<h1 class="text-3xl xs:text-5xl sm:text-7xl font-bold">Leandro Rossi</h1>
+				<h2 class="text-blue-500 text-xl xs:text-3xl sm:text-5xl font-semibold">Frontend Developer</h2>
 			</div>
 			<div class="py-6">
 				<SocialsBtn
@@ -33,24 +36,19 @@ import { TbMailShare } from "react-icons/tb";
 				/>
 			</div>									
 		</section>
-		<section id="proyectos" class="h-96">
+		<section id="proyectos" class="h-screen p-6">
 			<h2 class="font-semibold text-3xl mb-4">Proyectos</h2>
 			<p>En proceso...</p>
 		</section>
-		<section id="skills" class="h-96">
-			<h2 class="font-semibold text-3xl mb-4">Skills</h2>
-			<p>En proceso...</p>
+		<section id="skills" class="p-6 min-h-[80vh]">
+			<h2 class="font-semibold text-3xl mb-6">Skills</h2>
+			<Skills/>
 		</section>	
-		<section id="sobre-mi">
-			<h2 class="font-semibold text-2xl sm:text-3xl mb-4">Sobre mí</h2>
+		<section id="sobre-mi" class="backdrop-blur-sm p-6 rounded-2xl mb-12">
+			<h2 class="font-semibold text-2xl sm:text-3xl mb-8 lg:mb-4">Sobre mí</h2>
 			<AboutMe/>
 		</section>
 	</main>
 </Layout>
 
-<!-- <style>	
-	.bg-blur{		
-		backdrop-filter: blur(1px);	
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);					
-	}
-</style> -->
+
