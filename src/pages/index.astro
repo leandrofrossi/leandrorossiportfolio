@@ -3,10 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import SocialsBtn from '../components/SocialsBtn.astro';
 import AboutMe from '../components/AboutMe.astro';
 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaAngleDoubleDown } from "react-icons/fa";
 import { TbMailShare } from "react-icons/tb";
 import Skills from '../components/Skills.astro';
 import Projects from '../components/Projects.astro';
+import IconComponent from '../components/IconComponent';
 ---
 
 <Layout 
@@ -14,11 +15,11 @@ import Projects from '../components/Projects.astro';
 	description="Leandro Rossi Frontend Developer - Portfolio"
 >	
 	<main class="flex flex-col gap-6 text-gray-100 w-full sm:w-2/3 m-auto sm:p-4">
-		<section id="inicio" class="flex flex-col justify-center items-center rounded-3xl h-screen">			
+		<section id="inicio" class="flex flex-col justify-center items-center rounded-3xl h-screen relative">			
 			<div class="flex flex-col text-center">		
 				<h1 class="text-3xl xs:text-5xl sm:text-7xl font-bold">Leandro Rossi</h1>
-				<h2 class="text-blue-500 text-xl xs:text-3xl sm:text-5xl font-semibold">Frontend Developer</h2>
-			</div>
+				<h2 class="text-blue-500 text-xl xs:text-3xl sm:text-5xl font-semibold">Frontend Developer</h2>				
+			</div>	
 			<div class="py-6">
 				<SocialsBtn
 					href="https://www.linkedin.com/in/rossileandro/"
@@ -35,7 +36,10 @@ import Projects from '../components/Projects.astro';
 					title="Email"
 					icon={TbMailShare}
 				/>
-			</div>									
+			</div>		
+			<div class="absolute bottom-6 mb-4 flex justify-center w-full">
+				<IconComponent icon={FaAngleDoubleDown} title="ScrollDown" className="size-6 xs:size-8 md:size-10 animate-bounce" />
+			</div>								
 		</section>
 		<section id="proyectos" class="min-h-screen lg:p-6">
 			<h2 class="font-semibold text-2xl sm:text-3xl mb-4">Proyectos</h2>
