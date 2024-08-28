@@ -1,5 +1,3 @@
-import React from 'react';
-
 const IconComponent = ({ icon: Icon, className, title }) => {
   return (
     <div className="relative inline-block group">

@@ -1,0 +1,44 @@
+---
+import ProjectsCard from './ProjectsCard.jsx';
+
+const projects = [
+    {
+    title: 'Project One',
+    description: 'A brief description of Project One.',
+    bgColor: 'rgb(15,13,50)',       
+    image:'../public/project2.webp'
+    },
+    {
+    title: 'Project Two',
+    description: 'A brief description of Project Two.',
+    bgColor: 'rgb(117,92,222)',    
+    image:'../public/project.webp'
+    },
+    {
+    title: 'Project 3',
+    description: 'A brief description of Project 3.',
+    bgColor: 'rgb(41,169,160)',    
+    image:'../public/project3.webp'
+    },
+    {
+    title: 'Project 4',
+    description: 'A brief description of Project 4.',
+    bgColor: 'rgb(2,13,10)',    
+    image:'../public/project4.webp'
+    },
+];
+---   
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      {projects.map((project, index) => (
+        <ProjectsCard
+          key={index}
+          title={project.title}
+          description={project.description}                   
+          image={project.image}
+          bgColor={project.bgColor}
+        />
+      ))}
+    </div>
+
+   
+  
