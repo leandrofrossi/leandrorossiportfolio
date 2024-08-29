@@ -13,7 +13,7 @@ const ProjectsCard = ({ title, description, image, bgColor, technologies }) => {
                                 <li>
                                     <span className={`flex gap-x-2 rounded-full text-xs ${tag.class} p-1`}
                                     >
-                                        <IconComponent icon={tag.icon} title={tag.name} className="size-4 xs:size-5" />                                        
+                                        <IconComponent icon={tag.icon} className="size-4 xs:size-5" />                                        
                                     </span>
                                 </li>
                             ))}
@@ -21,7 +21,7 @@ const ProjectsCard = ({ title, description, image, bgColor, technologies }) => {
                     </div>
                 </div>
             </div>
-            <img className="right-5 top-5 absolute w-[250px] lg:group-hover:w-[500px]  lg:group-hover:h-auto transition-all duration-700 ease-out" src={image} alt="Photo" style={{ transform: 'none' }}/>
+            <img className="right-5 top-5 absolute w-[250px] lg:group-hover:w-[500px]  lg:group-hover:h-auto transition-all duration-700 ease-out" src={image} alt="Photo"/>
             <div className="h-full aspect-square right-10 absolute lg:group-hover:right-[500px] transition-all duration-700 ease-out" style={{ backgroundImage: `linear-gradient(to right, ${bgColor}, transparent)` }}></div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="absolute top-5 right-5 z-10 scale-0 lg:group-hover:scale-100 transition-all duration-500">
                 <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
