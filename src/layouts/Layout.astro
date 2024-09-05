@@ -78,6 +78,23 @@ import Footer from '../components/Footer.astro';
         from {transform: translateY(0)}
         to {transform: translateY(-15vh)}
     }
+
+    .scrollbar-style::-webkit-scrollbar {width: 8px;}
+  
+    .scrollbar-style::-webkit-scrollbar-track {
+      background: #424242;
+      border-radius: 10px;
+    }
+  
+    .scrollbar-style::-webkit-scrollbar-thumb {
+      background-color: #686868;
+      border-radius: 20px;
+    }
+  
+    .scrollbar-style::-webkit-scrollbar-thumb:hover {
+      background: #868686;
+    }
+  
 </style>
 
 <script> 

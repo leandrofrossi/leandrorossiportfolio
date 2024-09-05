@@ -1,72 +1,77 @@
 ---
-import ProjectsCard from './ProjectsCard.jsx';
-
-import { FaReact } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiChakraui, SiAstro } from "react-icons/si";
-
-const TAGS = {
-  REACT: {
-    name: "Reactjs",
-    class: "bg-black text-[#00D8FF]",
-    icon: FaReact,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#2298BD] text-white",
-    icon: RiTailwindCssFill,
-  },
-  CHAKRA: {
-    name: "ChakraUI",
-    class: "text-[#7BCBD4] bg-white",
-    icon: SiChakraui,
-  },
-  ASTRO: {
-    name: "Astro",
-    class: "bg-[#FF5D01] text-white",
-    icon: SiAstro,
-  },
-}
+import ProjectsCard from "./ProjectsCard";
 
 const projects = [
   {
-    title: 'Project One',
-    description: 'A brief description of Project One.',
+    title: 'Justina.io',
+    description: 'Hackaton. Desarrollo del Frontend en proyecto grupal de 8 integrantes.',
+    descriptionFull: ['Proyecto grupal desarrollado en Hackaton de No Country. Es un MVP realizado utilizando metodologías ágiles por un equipo de 8 miembros (2 UX/UI, 1 TL, 3 front y 2 back). Mi rol fue desempeñarme como Frontend utilizando Vite/React, Tailwind, Axios, React Router, Zustand. En el Backend se utilizó C#, .NET, EntityFramework, Microsoft SQL Server, Swagger. Utilizamos Trello, Slack y Discord como canales de comunicación y organización. Figma para el diseño', 'En Justina, nos enfocamos en proporcionar una solución integral y segura para la gestión de información médica. Nuestro enfoque centrado en el usuario y nuestra arquitectura robusta aseguran que tanto médicos como pacientes puedan acceder a la información de manera eficiente y segura. Nuestra plataforma no solo facilita la administración de datos médicos, sino que también mejora la colaboración y comunicación entre todos los actores del sistema de salud.',],
     bgColor: 'rgb(15,13,50)',       
-    image:'/project2.webp',
-    technologies:[TAGS.TAILWIND, TAGS.REACT, TAGS.ASTRO, TAGS.CHAKRA]
+    image:'/Justina.png',
+    image2:'/JustinaInicio.png',
+    technologies:["TAILWIND", "REACT"],
+    github:'https://github.com/No-Country-simulation/h1-02-csharp-react/tree/DevelopFrontend',
+    link:'https://justinaio-app.netlify.app/'
   },
   {
-    title: 'Project Two',
-    description: 'A brief description of Project Two.',
-    bgColor: 'rgb(117,92,222)',    
-    image:'/project.webp',
-    technologies:[TAGS.TAILWIND, TAGS.REACT]
-  },
-  {
-    title: 'Project 3',
-    description: 'A brief description of Project 3.',
+    title: 'Event Planner',
+    description: 'Simulación laboral. Desarrollo de todo el Frontend en proyecto grupal de 6 integrantes.',
+    descriptionFull: ['Event Planner es una web que permite el encuentro entre usuarios que organizan eventos y los proveedores que se necesitan para el mismo.','Un usuario (organizador) crea un evento con sus caracteristicas (fecha, duración, lugar, cantidad de invitados, tipo de evento) y detalla en el mismo una lista de proveedores que necesita encontrar. Luego recibe postulaciones de los proveedores con presupuesto, datos de contacto y mensaje, y decide si aceptar la propuesta o rechazarla. El contractor (proveedor) crea su perfil con las especialidades correspondientes y en base a ellas puede postularse a los eventos disponibles, enviando un presupuesto y un mensaje al organizador con sus datos.','Este proyecto es un MVP realizado utilizando metodologías ágiles por un equipo de 6 miembros (1 UX/UI, 1 front y 4 back) en una simulación laboral de No Country. Mi rol fue desempeñarme como Frontend utilizando Vite/React, Chakra-UI, Axios, React Router, Yup. En el Backend se utilizó C#, .NET, EntityFramework, Microsoft SQL Server, Swagger. Utilizamos Notion y Discord como canales de comunicación y organización. Figma para el diseño'],
     bgColor: 'rgb(41,169,160)',    
-    image:'/project3.webp',
-    technologies:[TAGS.TAILWIND, TAGS.REACT]
+    image:'/Event.png',
+    image2:'/portadaEP.png',
+    technologies:["CHAKRA", "REACT"],
+    github:'https://github.com/No-Country/s14-32-csharp',
+    link:'https://s14-32-csharp.vercel.app/'
   },
   {
-    title: 'Project 4',
-    description: 'A brief description of Project 4.',
+    title: 'EcoPay',
+    description: 'Simulación laboral. Desarrollo del Frontend en proyecto grupal de 16 integrantes.',
+    descriptionFull: ['EcoPay es una billetera virtual diseñada para simplificar tus transacciones diarias cuidando el medioambiente y generando conciencia ecológica.','Entre algunas de sus características clave se encuentran: Depósitos, Transferencias, Extracciones. Historial de movimientos. Consulta de valor de divisas. Tarjeta virtual incluida. Seguridad avanzada con tecnología de cifrado. Interfaz intuitiva con estilo minimalista. Integración con servicios ecológicos.', 'Este proyecto es un MVP realizado por un equipo de 16 miembros en una simulación laboral de No Country. Mi rol fue desempeñarme como Frontend utilizando Vite/React, Tailwind, Axios y Formik. En el Backend utilizaron Java, Spring, PostgreSQL, Docker. Desde Diseño ux/ui utilizaron Figma. Todo el equipo utilizamos Trello y Discord como canales de comunicación y organización.'],
+    bgColor: 'rgb(117,92,222)',    
+    image:'/EcoPay.png',
+    image2:'/EcoPayInicio.png',
+    technologies:["TAILWIND", "REACT"],
+    github:'https://github.com/No-Country/s13-21-ft-java',
+    link:'https://s13-21-ft-java.vercel.app/'
+  },
+  {
+    title: 'Airbnb Clon',
+    description: 'Simulación laboral. Desarrollo del Frontend en proyecto grupal de 5 integrantes.',
+    descriptionFull: ['Este proyecto es un clon de Airbnb desarrollado con el objetivo de brindar una plataforma robusta para la gestión de propiedades y reservas.','Este proyecto es un MVP realizado por un equipo de 5 miembros (3 front y 2 back) en una simulación laboral de No Country. Mi rol fue desempeñarme como Frontend utilizando Vite/React, Tailwind y Material Tailwind. En el Backend utilizaron Spring Boot con integración de Spring Security y una API de imágenes completa. Utilizamos Trello y Discord como canales de comunicación y organización.'],
     bgColor: 'rgb(2,13,10)',    
-    image:'/project4.webp',
-    technologies:[TAGS.TAILWIND, TAGS.REACT]
+    image:'/AirbnbClon.png',
+    image2:'/AirbnbClonInicio.png',
+    technologies:["TAILWIND", "REACT"],
+    github:'https://github.com/No-Country/c15-33-ft-java-react',
+    link:''
+  },
+  {
+    title: 'La Herminda Casas de Campo',
+    description: 'Freelance. Desarrollo de página web para pyme de hospedajes.',
+    descriptionFull: ['Proyecto freelance de maquetación de página web para pyme de hospedajes La Herminda Casas de Campo.','Se utilizo principalmente Astro con Tailwind para los estilos y algunos componentes de React pensando en las funcionalidades a futuro.'],
+    bgColor: 'rgb(0,1,26)',    
+    image:'/LaHerminda.png',
+    image2:'/LaHermindaInicio.png',
+    technologies:["TAILWIND", "ASTRO", "REACT"],
+    github:'https://github.com/leandrofrossi/LaHerminda',
+    link:''
+  },
+  {
+    title: 'Backend Facturación eCommerce',
+    description: 'Desarrollo de API de facturación en curso de Coderhouse.',
+    descriptionFull: ['Proyecto de API de facturación desarrollado en curso de Coderhouse.', 'ABM de Clientes, Productos y Facturas utilizando la arquitectura API Restful en Spring Boot (Java). Se utilizaron distintas dependencias como Spring Web: consola para consultar nuestra base de datos, Spring Data JPA : para persistir datos en SQL, H2 Data Base SQL : Base de Datos liviana que puede guardarse en memoria o disco.'],
+    bgColor: 'rgb(20,157,142)',    
+    image:'/APIFacturacion.png',
+    image2:'/ABMDERJava.jpg',
+    technologies:["JAVA", "SPRING"],
+    github:'https://github.com/leandrofrossi/APIRest-Facturacion-Springboot',
+    link:''
   },
 ];
 --- 
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-  {projects.map((project) => (
-    <ProjectsCard          
-      title={project.title}
-      description={project.description}                   
-      image={project.image}
-      bgColor={project.bgColor}
-      technologies={project.technologies}
-    />
+  {projects.map((project) => (      
+    <ProjectsCard project={project} client:load/>
   ))}
-</div> 
+</div>

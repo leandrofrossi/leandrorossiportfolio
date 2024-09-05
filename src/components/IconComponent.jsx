@@ -1,4 +1,4 @@
-const IconComponent = ({ icon: Icon, className, title }) => {
+const IconComponent = ({ icon: Icon, className, title }) => {  
   return (
     <div className="relative inline-block group">
       <Icon className={className} />
