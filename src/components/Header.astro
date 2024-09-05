@@ -1,6 +1,7 @@
 ---
 import IconComponent from './IconComponent.jsx';
 import { HiHome } from "react-icons/hi2";
+import { HiMoon, HiSun } from 'react-icons/hi';
 
 const navItems = [
     {
@@ -50,7 +51,11 @@ const navItems = [
           link.title}
         </a>
       ))
-    }    
+    } 
+    <button id="theme-toggle" class="p-2 ml-4 text-gray-200 hover:text-blue-500">
+      <HiSun className="hidden dark:block" />
+      <HiMoon className="block dark:hidden" />
+    </button>   
   </nav>
 </header>
 
@@ -104,6 +109,17 @@ const navItems = [
       }
     }
   })
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.classList.toggle('dark', currentTheme === 'dark');
+
+    themeToggle.addEventListener('click', () => {
+      const isDarkMode = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    });
+  });
 </script>
 
 <style>
