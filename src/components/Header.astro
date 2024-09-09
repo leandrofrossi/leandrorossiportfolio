@@ -36,7 +36,7 @@ const navItems = [
   class="fixed top-0 z-50 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-sm sm:text-base font-medium rounded-full text-gray-200 justify-center items-center"
+    class="flex px-3 text-sm sm:text-base font-medium rounded-full text-gray-700 dark:text-gray-200 justify-center items-center"
   >
     {
       navItems.map((link) => (
@@ -46,13 +46,13 @@ const navItems = [
           href={link.url}
         >
           {link.title === "Inicio" ? 
-          <IconComponent icon={HiHome} className={`text-gray-200 size-4 sm:size-6 hover:text-blue-500 ${link.label === "inicio" ? "active" : ""}`}/>
+          <IconComponent icon={HiHome} className={`text-gray-700 dark:text-gray-200 size-4 sm:size-6 hover:text-blue-500 ${link.label === "inicio" ? "active" : ""}`}/>
           :
           link.title}
         </a>
       ))
     } 
-    <button id="theme-toggle" class="p-2 ml-4 text-gray-200 hover:text-blue-500">
+    <button id="theme-toggle" class="p-2 text-gray-700 dark:text-gray-200 hover:text-blue-500">
       <HiSun className="hidden dark:block" />
       <HiMoon className="block dark:hidden" />
     </button>   
@@ -129,9 +129,16 @@ const navItems = [
     animation-range: 0 100px;
   }
 
+  nav {
+    @apply dark:bg-gray-800/90 bg-white/50;
+  }
+
   @keyframes nav-shadown {
+    0% {
+      @apply dark:bg-gray-800/0 bg-white/0;
+    }
     to {
-      @apply shadow-lg ring-1 backdrop-blur bg-gray-800/90 ring-white/10;
+      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
     }
   }
 </style>

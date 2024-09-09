@@ -235,5 +235,19 @@ import Footer from '../components/Footer.astro';
     };
     generateSpaceLayer("1px", ".space-1", 200, "25s");
     generateSpaceLayer("2px", ".space-2", 100, "20s");
-    generateSpaceLayer("4px", ".space-3", 25, "15s");   
+    generateSpaceLayer("4px", ".space-3", 25, "15s");
+       
+    
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        if (event.matches) {
+        document.documentElement.classList.add('dark');
+        } else {
+        document.documentElement.classList.remove('dark');
+        }
+    });
 </script>
