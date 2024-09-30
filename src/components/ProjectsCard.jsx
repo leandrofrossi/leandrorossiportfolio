@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaReact, FaJava } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiChakraui, SiAstro, SiSpring } from "react-icons/si";
@@ -44,14 +44,22 @@ const ProjectsCard = ({ project }) => {
     const openModal = (project) => {
         console.log("Opening modal for project: ", project);
         setSelectedProject(project);        
-        setModalOpen(true);        
+        setModalOpen(true);   
+        document.body.style.overflow = 'hidden';     
     };   
 
     const closeModal = () => {
         console.log("Closing modal");
         setModalOpen(false);
-        setSelectedProject(null);        
+        setSelectedProject(null);
+        document.body.style.overflow = 'auto';        
     };  
+
+    useEffect(() => {
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
 
     return ( 
         <>
@@ -82,7 +90,7 @@ const ProjectsCard = ({ project }) => {
                 </div>
                 <img className="right-2 scale-125 top-5 absolute w-[250px] lg:right-[-20px] lg:top-11 lg:group-hover:w-[500px]  lg:group-hover:h-auto transition-all duration-700 ease-out" src={project.image} alt={`${project.title} imagen`}/>
                 <div className="h-full aspect-square right-10 absolute lg:group-hover:right-[500px] transition-all duration-700 ease-out" style={{ backgroundImage: `linear-gradient(to right, ${project.bgColor}, transparent)` }}></div>                
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="absolute top-5 right-5 z-10 scale-0 lg:group-hover:scale-100 transition-all duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute top-5 right-5 z-10 scale-0 lg:group-hover:scale-100 transition-all duration-500">
                     <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
                     <path d="M11 13l9 -9"></path>
                     <path d="M15 4h5v5"></path>
